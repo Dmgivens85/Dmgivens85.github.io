@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/StemQA/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StemQA</title>
+    <script type="module" crossorigin src="/StemQA/assets/index-CJUak1gV.js"></script>
+    <link rel="stylesheet" crossorigin href="/StemQA/assets/index-3HhDMJBj.css">
+    <script>
+  (function () {
+    var parts = window.location.pathname.split('/').filter(Boolean)
+    var stemqaIndex = parts.findIndex(function (segment) {
+      return segment.toLowerCase() === 'stemqa'
+    })
+    var basePath = stemqaIndex >= 0 ? '/' + parts.slice(0, stemqaIndex + 1).join('/') : '/StemQA'
+    var routeSegments = stemqaIndex >= 0 ? parts.slice(stemqaIndex + 1) : []
+    var routePath = routeSegments.length ? '/' + routeSegments.join('/') : '/ingest'
+    var target = window.location.origin + basePath + '/#' + routePath + window.location.search + window.location.hash
+    if (window.location.href !== target) {
+      window.location.replace(target)
+    }
+  })()
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
